@@ -10,7 +10,6 @@ export class NotaAmbController {
     return this.repo.findAll();
   }
 
-  // Notas sin nota_final definida aún (útil para el docente)
   @Get('sin-definir')
   findSinDefinir() {
     return this.repo.findSinDefinir();
@@ -19,6 +18,15 @@ export class NotaAmbController {
   @Get('matricula-grupo/:id_mg')
   findByMatriculaGrupo(@Param('id_mg') id: string) {
     return this.repo.findByMatriculaGrupo(id);
+  }
+
+  // Notas del estudiante en un periodo con nombre de asignatura resuelto
+  @Get('estudiante/:cod/periodo/:id_periodo')
+  findNotasPorEstudianteYPeriodo(
+    @Param('cod') cod: string,
+    @Param('id_periodo') idPeriodo: string,
+  ) {
+    return this.repo.findNotasPorEstudianteYPeriodo(cod, idPeriodo);
   }
 
   @Get(':id')

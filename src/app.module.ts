@@ -90,6 +90,12 @@ import { VistasCentralController } from './controllers/vistas/vistas-central.con
 import { VistasIngenieriaController } from './controllers/vistas/vistas-ingenieria.controller';
 import { VistasCienciasController } from './controllers/vistas/vistas-ciencias.controller';
 import { VistasAmbientalController } from './controllers/vistas/vistas-ambiental.controller';
+import { CalendarioIngController } from './controllers/ingenieria/calendario-ing.controller';
+import { CalendarioCieRepository } from './repositories/ciencias/calendario-cie.repository';
+import { CalendarioAmbController } from './controllers/ambiental/calendario-amb.controller';
+import { CalendarioAmbRepository } from './repositories/ambiental/calendario-amb.repository';
+import { CalendarioIngRepository } from './repositories/ingenieria/calendario-ing.repository';
+import { CalendarioCieController } from './controllers/ciencias/calendario-cie.controller';
 
 @Module({
   providers: [
@@ -116,6 +122,7 @@ import { VistasAmbientalController } from './controllers/vistas/vistas-ambiental
     GrupoIngRepository,
     MatriculaIngRepository,
     NotaIngRepository,
+    CalendarioIngRepository,
 
     // Repos ciencias
     EstudianteCieRepository,
@@ -125,6 +132,7 @@ import { VistasAmbientalController } from './controllers/vistas/vistas-ambiental
     GrupoCieRepository,
     MatriculaCieRepository,
     NotaCieRepository,
+    CalendarioCieRepository,
 
     // Repos ambiental
     EstudianteAmbRepository,
@@ -134,6 +142,7 @@ import { VistasAmbientalController } from './controllers/vistas/vistas-ambiental
     GrupoAmbRepository,
     MatriculaAmbRepository,
     NotaAmbRepository,
+    CalendarioAmbRepository,
 
     // Repos vistas
     VistasCentralRepository,
@@ -159,6 +168,7 @@ import { VistasAmbientalController } from './controllers/vistas/vistas-ambiental
     GrupoIngController,
     MatriculaIngController,
     NotaIngController,
+    CalendarioIngController,
 
     // Ciencias
     EstudianteCieController,
@@ -168,6 +178,7 @@ import { VistasAmbientalController } from './controllers/vistas/vistas-ambiental
     GrupoCieController,
     MatriculaCieController,
     NotaCieController,
+    CalendarioCieController,
 
     // Ambiental
     EstudianteAmbController,
@@ -177,6 +188,7 @@ import { VistasAmbientalController } from './controllers/vistas/vistas-ambiental
     GrupoAmbController,
     MatriculaAmbController,
     NotaAmbController,
+    CalendarioAmbController,
 
     // Vistas
     VistasCentralController,

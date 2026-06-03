@@ -29,7 +29,7 @@ FROM estudiantes e
 JOIN programas_academicos p ON p.id_programa = e.id_programa
 JOIN facultades f            ON f.id_facultad = p.id_facultad
 JOIN dblink(
-  'host=ep-dawn-union-aqxdp4l0-pooler.c-8.us-east-1.aws.neon.tech dbname=neondb user=neondb_owner password=npg_JmkQAyZ5I4sj sslmode=require',
+  '''host=ep-fancy-rain-aqguk5xk-pooler.c-8.us-east-1.aws.neon.tech dbname=neondb user=neondb_owner password=npg_5ptyYfcsS4Mg sslmode=require''',
   'SELECT persona_id, correo, contrasena_hash FROM usuarios'
 ) AS u(persona_id uuid, correo varchar, contrasena_hash varchar)
   ON u.persona_id = e.persona_id;
@@ -53,7 +53,7 @@ SELECT
 FROM docentes d
 JOIN facultades f ON f.id_facultad = d.id_facultad
 JOIN dblink(
-  'host=ep-dawn-union-aqxdp4l0-pooler.c-8.us-east-1.aws.neon.tech dbname=neondb user=neondb_owner password=npg_JmkQAyZ5I4sj sslmode=require',
+  'host=ep-fancy-rain-aqguk5xk-pooler.c-8.us-east-1.aws.neon.tech dbname=neondb user=neondb_owner password=npg_5ptyYfcsS4Mg sslmode=require',
   'SELECT persona_id, correo, contrasena_hash FROM usuarios'
 ) AS u(persona_id uuid, correo varchar, contrasena_hash varchar)
   ON u.persona_id = d.persona_id;
@@ -78,7 +78,7 @@ FROM administrativos a
 JOIN facultades f             ON f.id_facultad = a.id_facultad
 JOIN cargos_administrativo c  ON c.id = a.id_cargo
 JOIN dblink(
-  'host=ep-dawn-union-aqxdp4l0-pooler.c-8.us-east-1.aws.neon.tech dbname=neondb user=neondb_owner password=npg_JmkQAyZ5I4sj sslmode=require',
+        'host=ep-fancy-rain-aqguk5xk-pooler.c-8.us-east-1.aws.neon.tech dbname=neondb user=neondb_owner password=npg_5ptyYfcsS4Mg sslmode=require',
   'SELECT persona_id, correo, contrasena_hash FROM usuarios'
 ) AS u(persona_id uuid, correo varchar, contrasena_hash varchar)
   ON u.persona_id = a.persona_id;
@@ -106,7 +106,7 @@ FROM estudiantes e
 JOIN programas_academicos p ON p.id_programa = e.id_programa
 JOIN facultades f            ON f.id_facultad = p.id_facultad
 JOIN dblink(
-  'host=ep-dawn-union-aqxdp4l0-pooler.c-8.us-east-1.aws.neon.tech dbname=neondb user=neondb_owner password=npg_JmkQAyZ5I4sj sslmode=require',
+        'host=ep-fancy-rain-aqguk5xk-pooler.c-8.us-east-1.aws.neon.tech dbname=neondb user=neondb_owner password=npg_5ptyYfcsS4Mg sslmode=require',
   'SELECT persona_id, nombres, apellidos, num_documento, tipo_documento, telefono FROM personas'
 ) AS pers(persona_id uuid, nombres varchar, apellidos varchar, num_documento varchar, tipo_documento varchar, telefono varchar)
   ON pers.persona_id = e.persona_id;
@@ -133,7 +133,7 @@ FROM docentes d
 JOIN facultades f         ON f.id_facultad = d.id_facultad
 JOIN tipos_vinculacion tv ON tv.id = d.id_tipo_vinculacion
 JOIN dblink(
-  'host=ep-dawn-union-aqxdp4l0-pooler.c-8.us-east-1.aws.neon.tech dbname=neondb user=neondb_owner password=npg_JmkQAyZ5I4sj sslmode=require',
+        'host=ep-fancy-rain-aqguk5xk-pooler.c-8.us-east-1.aws.neon.tech dbname=neondb user=neondb_owner password=npg_5ptyYfcsS4Mg sslmode=require',
   'SELECT persona_id, nombres, apellidos, num_documento, telefono FROM personas'
 ) AS pers(persona_id uuid, nombres varchar, apellidos varchar, num_documento varchar, telefono varchar)
   ON pers.persona_id = d.persona_id;

@@ -8,25 +8,21 @@ export class PersonaRepository {
     @Inject('CENTRAL_DATA_SOURCE') private readonly ds: DataSource,
   ) {}
 
-  // Todas las personas
   findAll() {
     return this.ds.getRepository(Persona).find();
   }
 
-  // Buscar por ID
   findById(persona_id: string) {
     return this.ds.getRepository(Persona).findOneBy({ persona_id });
   }
 
-  // Buscar por número de documento
   findByDocumento(tipo: string, num: string) {
     return this.ds.getRepository(Persona).findOneBy({
       tipo_documento: tipo,
-      num_documento: num,
+      num_documento:  num,
     });
   }
 
-  // Búsqueda por nombre o apellido (útil para el módulo administrador)
   async searchByNombre(termino: string) {
     return this.ds
       .getRepository(Persona)
@@ -35,5 +31,19 @@ export class PersonaRepository {
         t: `%${termino.toLowerCase()}%`,
       })
       .getMany();
+  }
+
+  // Solo telefono y direccion — lo único editable por el estudiante
+  async updateContacto(
+    persona_id: string,
+    campos: { telefono?: string; direccion?: string },
+  ) {
+    const payload: Partial<Persona> = {};
+    if (campos.telefono  !== undefined) payload.telefono  = campos.telefono;
+    if (campos.direccion !== undefined) payload.direccion = campos.direccion;
+
+    if (Object.keys(payload).length === 0) return { affected: 0 };
+
+    return this.ds.getRepository(Persona).update({ persona_id }, payload);
   }
 }
