@@ -96,6 +96,12 @@ import { CalendarioAmbController } from './controllers/ambiental/calendario-amb.
 import { CalendarioAmbRepository } from './repositories/ambiental/calendario-amb.repository';
 import { CalendarioIngRepository } from './repositories/ingenieria/calendario-ing.repository';
 import { CalendarioCieController } from './controllers/ciencias/calendario-cie.controller';
+import { CalendarioDocenteIngController } from './controllers/ingenieria/calendario-docente-ing.controller';
+import { CalendarioDocenteCieController } from './controllers/ciencias/calendario-docente-cie.controller';
+import { CalendarioDocenteAmbController } from './controllers/ambiental/calendario-docente-amb.controller';
+import { CalendarioDocenteIngRepository } from './repositories/ingenieria/calendario-docente-ing.repository';
+import { CalendarioDocenteCieRepository } from './repositories/ciencias/calendario-docente-cie.repository';
+import { CalendarioDocenteAmbRepository } from './repositories/ambiental/calendario-docente-amb.repository';
 
 @Module({
   providers: [
@@ -123,6 +129,7 @@ import { CalendarioCieController } from './controllers/ciencias/calendario-cie.c
     MatriculaIngRepository,
     NotaIngRepository,
     CalendarioIngRepository,
+    CalendarioDocenteIngRepository,
 
     // Repos ciencias
     EstudianteCieRepository,
@@ -133,6 +140,7 @@ import { CalendarioCieController } from './controllers/ciencias/calendario-cie.c
     MatriculaCieRepository,
     NotaCieRepository,
     CalendarioCieRepository,
+    CalendarioDocenteCieRepository,
 
     // Repos ambiental
     EstudianteAmbRepository,
@@ -143,6 +151,7 @@ import { CalendarioCieController } from './controllers/ciencias/calendario-cie.c
     MatriculaAmbRepository,
     NotaAmbRepository,
     CalendarioAmbRepository,
+    CalendarioDocenteAmbRepository,
 
     // Repos vistas
     VistasCentralRepository,
@@ -169,6 +178,7 @@ import { CalendarioCieController } from './controllers/ciencias/calendario-cie.c
     MatriculaIngController,
     NotaIngController,
     CalendarioIngController,
+    CalendarioDocenteIngController,
 
     // Ciencias
     EstudianteCieController,
@@ -179,6 +189,7 @@ import { CalendarioCieController } from './controllers/ciencias/calendario-cie.c
     MatriculaCieController,
     NotaCieController,
     CalendarioCieController,
+    CalendarioDocenteCieController,
 
     // Ambiental
     EstudianteAmbController,
@@ -189,6 +200,7 @@ import { CalendarioCieController } from './controllers/ciencias/calendario-cie.c
     MatriculaAmbController,
     NotaAmbController,
     CalendarioAmbController,
+    CalendarioDocenteAmbController,
 
     // Vistas
     VistasCentralController,
